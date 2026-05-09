@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.1 Computer Architecture | IGCSE CS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">0984 HARDWARE QUEST</div>
+        <div>
+            <a href="index.html" style="color: white; margin-left: 20px;">Home</a>
+            <a href="input-output.html" style="color: white; margin-left: 20px;">Next Module</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header style="padding: 2rem 0;">
+            <h1>3.1 Central Processing Unit (CPU) Architecture</h1>
+            <p style="color: var(--accent-blue);">Topic: The Von Neumann Model and the Fetch-Execute Cycle</p>
+        </header>
+
+        <section class="card">
+            <h2>3.1.1 The Von Neumann Model</h2>
+            <p>Named after John von Neumann, this architecture describes a system where <strong>instructions and data are stored in the same memory (RAM)</strong> as binary values.</p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="50" y="50" width="250" height="200" fill="none" stroke="#38bdf8" stroke-width="3" rx="10"/>
+                    <text x="145" y="40" fill="#38bdf8" font-weight="bold">CPU</text>
+                    <rect x="400" y="50" width="150" height="200" fill="none" stroke="#818cf8" stroke-width="3" rx="10"/>
+                    <text x="440" y="40" fill="#818cf8" font-weight="bold">MAIN MEMORY</text>
+                    <rect x="70" y="70" width="100" height="60" fill="#1e293b" stroke="#38bdf8" rx="5"/>
+                    <text x="105" y="105" fill="white" font-size="14">CU</text>
+                    <rect x="180" y="70" width="100" height="60" fill="#1e293b" stroke="#38bdf8" rx="5"/>
+                    <text x="215" y="105" fill="white" font-size="14">ALU</text>
+                    <line x1="300" y1="100" x2="400" y2="100" stroke="#38bdf8" stroke-width="4"/>
+                    <text x="315" y="90" fill="#38bdf8" font-size="10">Address Bus</text>
+                    <line x1="300" y1="180" x2="400" y2="180" stroke="#818cf8" stroke-width="4"/>
+                    <text x="325" y="170" fill="#818cf8" font-size="10">Data Bus</text>
+                </svg>
+            </div>
+
+            <h3>Key Components and Buses</h3>
+            <p>The CPU communicates with RAM via three <strong>System Buses</strong>:</p>
+            <ul>
+                <li><strong>Address Bus:</strong> Unidirectional. Carries addresses from the CPU to RAM.</li>
+                <li><strong>Data Bus:</strong> Bidirectional. Carries actual data/instructions between the CPU and RAM.</li>
+                <li><strong>Control Bus:</strong> Bidirectional. Carries command signals (like Read/Write).</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>3.1.2 Specialized Registers</h2>
+            <p>Registers are small, extremely fast storage locations within the CPU.</p>
+            <ul>
+                <li><strong>PC (Program Counter):</strong> Holds the address of the <em>next</em> instruction.</li>
+                <li><strong>MAR (Memory Address Register):</strong> Holds the address of the <em>current</em> memory location being accessed.</li>
+                <li><strong>MDR (Memory Data Register):</strong> Holds the data just fetched or about to be stored.</li>
+                <li><strong>CIR (Current Instruction Register):</strong> Holds the instruction being decoded.</li>
+                <li><strong>ACC (Accumulator):</strong> Stores results of logic and math operations.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>3.1.3 The Fetch-Execute Cycle</h2>
+            <p>This is the continuous process of the CPU. Here is the visual breakdown of the cycle:</p>
+            <div style="text-align: center; margin: 2rem 0;">
+                <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="100" r="80" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="5"/>
+                    <rect x="160" y="10" width="80" height="40" fill="#38bdf8" rx="5"/>
+                    <text x="178" y="35" fill="white" font-weight="bold">FETCH</text>
+                    <rect x="300" y="80" width="80" height="40" fill="#818cf8" rx="5"/>
+                    <text x="312" y="105" fill="white" font-weight="bold">DECODE</text>
+                    <rect x="160" y="150" width="80" height="40" fill="#22c55e" rx="5"/>
+                    <text x="172" y="175" fill="white" font-weight="bold">EXECUTE</text>
+                </svg>
+            </div>
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-left: 4px solid #818cf8;">
+                <strong>1. FETCH:</strong> The address in the PC is copied to the MAR. The PC is incremented. The instruction at the MAR address is moved to the MDR, then copied to the CIR.<br><br>
+                <strong>2. DECODE:</strong> The Control Unit interprets the instruction in the CIR.<br><br>
+                <strong>3. EXECUTE:</strong> The instruction is carried out (ALU used for calculations).
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>3.1.4 Factors Affecting CPU Performance</h2>
+            <p>A CPU's speed is determined by three main "Performance Pillars":</p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+                <div style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border-top: 3px solid #38bdf8;">
+                    <h4 style="color: #38bdf8;">System Clock Speed</h4>
+                    <p>Measured in GHz. Higher clock speed means more Fetch-Execute cycles per second.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border-top: 3px solid #818cf8;">
+                    <h4 style="color: #818cf8;">Number of Cores</h4>
+                    <p>More cores allow the CPU to process multiple instructions simultaneously (Parallel Processing).</p>
+                </div>
+                <div style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border-top: 3px solid #22c55e;">
+                    <h4 style="color: #22c55e;">Cache Size</h4>
+                    <p>Larger cache reduces the time the CPU spends waiting for data to arrive from RAM.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h2>Unit 3.1 Mastery Test (25 Marks)</h2>
+            <form id="quiz-3-1">
+                <p>1. Who proposed the model where data and instructions share the same memory? (1 Mark)</p>
+                <input type="radio" name="q1" value="correct"> Von Neumann <input type="radio" name="q1" value="w"> Charles Babbage
+
+                <p>2. Which register holds the address of the NEXT instruction? (1 Mark)</p>
+                <input type="radio" name="q2" value="correct"> PC <input type="radio" name="q2" value="w"> MAR
+
+                <p>3. Which component performs logical comparisons like AND/OR? (1 Mark)</p>
+                <input type="radio" name="q3" value="correct"> ALU <input type="radio" name="q3" value="w"> CU
+
+                <p>4. Which bus is unidirectional? (1 Mark)</p>
+                <input type="radio" name="q4" value="correct"> Address Bus <input type="radio" name="q4" value="w"> Data Bus
+
+                <p>5. What is the unit of measurement for CPU clock speed? (1 Mark)</p>
+                <input type="radio" name="q5" value="correct"> Hertz (Hz) <input type="radio" name="q5" value="w"> Bits
+
+                <p>6. Which register acts as a buffer for data traveling between RAM and CPU? (1 Mark)</p>
+                <input type="radio" name="q6" value="correct"> MDR <input type="radio" name="q6" value="w"> CIR
+
+                <p>7. What happens to the PC during the Fetch stage? (1 Mark)</p>
+                <input type="radio" name="q7" value="correct"> Increments by 1 <input type="radio" name="q7" value="w"> Resets to 0
+
+                <p>8. Which component generates pulses to synchronize operations? (1 Mark)</p>
+                <input type="radio" name="q8" value="correct"> System Clock <input type="radio" name="q8" value="w"> ALU
+
+                <p>9. The 'Stored Program Concept' means instructions are kept in RAM as binary. (1 Mark)</p>
+                <input type="radio" name="q9" value="correct"> True <input type="radio" name="q9" value="w"> False
+
+                <p>10. Which bus carries 'Read' and 'Write' signals? (1 Mark)</p>
+                <input type="radio" name="q10" value="correct"> Control Bus <input type="radio" name="q10" value="w"> Address Bus
+
+                <p>11. Where is an instruction held while it is being decoded? (1 Mark)</p>
+                <input type="radio" name="q11" value="correct"> CIR <input type="radio" name="q11" value="w"> ACC
+
+                <p>12. Which register holds the result of an addition? (1 Mark)</p>
+                <input type="radio" name="q12" value="correct"> Accumulator <input type="radio" name="q12" value="w"> PC
+
+                <p>13. Overclocking can lead to hardware damage due to heat. (1 Mark)</p>
+                <input type="radio" name="q13" value="correct"> True <input type="radio" name="q13" value="w"> False
+
+                <p>14. Increasing 'Bus Width' increases the volume of data sent at once. (1 Mark)</p>
+                <input type="radio" name="q14" value="correct"> True <input type="radio" name="q14" value="w"> False
+
+                <p>15. Which component decodes instructions? (1 Mark)</p>
+                <input type="radio" name="q15" value="correct"> Control Unit <input type="radio" name="q15" value="w"> ALU
+
+                <p>16. Cache memory is faster to access than RAM. (1 Mark)</p>
+                <input type="radio" name="q16" value="correct"> True <input type="radio" name="q16" value="w"> False
+
+                <p>17. What is the correct order of the CPU cycle? (1 Mark)</p>
+                <input type="radio" name="q17" value="correct"> Fetch-Decode-Execute <input type="radio" name="q17" value="w"> Execute-Fetch-Decode
+
+                <p>18. A Dual-Core CPU has two separate processing units. (1 Mark)</p>
+                <input type="radio" name="q18" value="correct"> True <input type="radio" name="q18" value="w"> False
+
+                <p>19. Which register holds the address of the current memory location? (1 Mark)</p>
+                <input type="radio" name="q19" value="correct"> MAR <input type="radio" name="q19" value="w"> MDR
+
+                <p>20. The Data Bus carries data from the CPU to I/O devices. (1 Mark)</p>
+                <input type="radio" name="q20" value="correct"> True <input type="radio" name="q20" value="w"> False
+
+                <p>21. Logic gates like AND/OR are located within the ALU, not the CU. (1 Mark)</p>
+                <input type="radio" name="q21" value="correct"> True <input type="radio" name="q21" value="w"> False
+
+                <p>22. Which memory type is integrated directly into the CPU? (1 Mark)</p>
+                <input type="radio" name="q22" value="correct"> Cache <input type="radio" name="q22" value="w"> HDD
+
+                <p>23. The MAR address is sent to RAM via the Address Bus. (1 Mark)</p>
+                <input type="radio" name="q23" value="correct"> True <input type="radio" name="q23" value="w"> False
+
+                <p>24. Clock speed is measured in GHz (GigaHertz). (1 Mark)</p>
+                <input type="radio" name="q24" value="correct"> True <input type="radio" name="q24" value="w"> False
+
+                <p>25. The result of 5 + 3 in the ALU would be stored in the... (1 Mark)</p>
+                <input type="radio" name="q25" value="correct"> ACC <input type="radio" name="q25" value="w"> MAR
+
+                <br><br>
+                <button type="button" class="btn-gamify" onclick="calculateScore('3-1')">Check My Performance</button>
+            </form>
+            <div id="result-3-1" style="margin-top: 20px;"></div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

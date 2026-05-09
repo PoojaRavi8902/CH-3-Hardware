@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.3 Data Storage | IGCSE CS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">0984 HARDWARE QUEST</div>
+        <div>
+            <a href="index.html" style="color: white; margin-left: 20px;">Home</a>
+            <a href="input-output.html" style="color: white; margin-left: 20px;">I/O Devices</a>
+            <a href="network.html" style="color: white; margin-left: 20px;">Next: Networking</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header style="padding: 2rem 0;">
+            <h1>3.3 Data Storage</h1>
+            <p style="color: var(--accent-blue);">Primary, Secondary, and Offline storage technologies.</p>
+        </header>
+
+        <section class="card">
+            <h2>3.3.1 Storage Hierarchy</h2>
+            <p>Computers use a hierarchy of storage to balance speed, cost, and capacity.</p>
+            <ul>
+                <li><strong>Primary Storage:</strong> Directly accessible by the CPU (RAM, ROM). Fastest access.</li>
+                <li><strong>Secondary Storage:</strong> Non-volatile storage for files and OS (HDD, SSD). Large capacity.</li>
+                <li><strong>Offline Storage:</strong> Removable storage used for transport or backup (USB Flash, Optical Disks).</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>3.3.2 Primary Memory: RAM vs ROM</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <h3 style="color: var(--accent-blue);">RAM (Random Access Memory)</h3>
+                    <p>Volatile memory that stores data currently in use. <strong>DRAM</strong> needs refreshing; <strong>SRAM</strong> is faster and used for Cache.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <h3 style="color: var(--accent-purple);">ROM (Read Only Memory)</h3>
+                    <p>Non-volatile memory. Stores start-up instructions (BIOS/Bootstrap). Data cannot be easily changed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>3.3.3 Secondary Storage Types</h2>
+            <p><strong>Magnetic (HDD):</strong> Uses magnetized platters and read/write heads. High capacity but slow due to moving parts.</p>
+            <p><strong>Solid State (SSD):</strong> Uses NAND flash gates. No moving parts, silent, and much faster than HDD, but more expensive per GB.</p>
+            
+            <h3 style="margin-top:20px;">Optical Storage Comparison</h3>
+            <p>Data is stored in "Pits" and "Lands" read by lasers. The wavelength of the laser determines capacity:</p>
+            <table style="width: 100%; border-collapse: collapse; margin-top:10px;">
+                <tr style="background: rgba(0,0,0,0.3);">
+                    <th style="padding: 10px; border: 1px solid #444;">Format</th>
+                    <th style="padding: 10px; border: 1px solid #444;">Laser Type</th>
+                    <th style="padding: 10px; border: 1px solid #444;">Typical Capacity</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #444;">CD-ROM</td>
+                    <td style="padding: 10px; border: 1px solid #444;">Red Laser (Long wave)</td>
+                    <td style="padding: 10px; border: 1px solid #444;">700 MB</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #444;">DVD-ROM</td>
+                    <td style="padding: 10px; border: 1px solid #444;">Red Laser (Short wave)</td>
+                    <td style="padding: 10px; border: 1px solid #444;">4.7 GB</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #444;">Blu-ray</td>
+                    <td style="padding: 10px; border: 1px solid #444;">Blue/Violet Laser</td>
+                    <td style="padding: 10px; border: 1px solid #444;">25 GB - 50 GB</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>3.3.4 Cloud vs Local Storage</h2>
+            <p><strong>Cloud Storage:</strong> Data is stored on remote servers accessed via the internet.</p>
+            <ul>
+                <li>✅ <strong>Pros:</strong> Access from any device, easy sharing, automatic backups.</li>
+                <li>❌ <strong>Cons:</strong> Requires internet, monthly subscription costs, security concerns.</li>
+            </ul>
+        </section>
+
+        <section class="quiz-section">
+            <h2>Unit 3.3 Mastery Test (25 Marks)</h2>
+            <form id="quiz-3-3">
+                
+                <p>1. Which type of memory is volatile and loses data when power is lost? (1 Mark)</p>
+                <input type="radio" name="q1" value="correct"> RAM <input type="radio" name="q1" value="w"> ROM
+
+                <p>2. Which type of memory contains the BIOS/Bootstrap loader? (1 Mark)</p>
+                <input type="radio" name="q2" value="correct"> ROM <input type="radio" name="q2" value="w"> RAM
+
+                <p>3. Virtual Memory is used when which component is full? (1 Mark)</p>
+                <input type="radio" name="q3" value="correct"> RAM <input type="radio" name="q3" value="w"> HDD
+
+                <p>4. ROM is "Read Only," meaning its contents cannot be easily changed. (1 Mark)</p>
+                <input type="radio" name="q4" value="correct"> True <input type="radio" name="q4" value="w"> False
+
+                <p>5. Which memory is faster for the CPU to access? (1 Mark)</p>
+                <input type="radio" name="q5" value="correct"> Primary Storage <input type="radio" name="q5" value="w"> Secondary Storage
+
+                <p>6. Magnetic storage (HDD) uses what to read and write data? (1 Mark)</p>
+                <input type="radio" name="q6" value="correct"> Read/Write Heads <input type="radio" name="q6" value="w"> Lasers
+
+                <p>7. HDDs contain spinning platters. (1 Mark)</p>
+                <input type="radio" name="q7" value="correct"> True <input type="radio" name="q7" value="w"> False
+
+                <p>8. What is a disadvantage of HDD compared to SSD? (1 Mark)</p>
+                <input type="radio" name="q8" value="correct"> Slower access speed <input type="radio" name="q8" value="w"> Higher cost per GB
+
+                <p>9. Magnetic tape is primarily used for what purpose? (1 Mark)</p>
+                <input type="radio" name="q9" value="correct"> Backups and Archiving <input type="radio" name="q9" value="w"> Running an OS
+
+                <p>10. Fragmentation slows down an HDD because the head must move more. (1 Mark)</p>
+                <input type="radio" name="q10" value="correct"> True <input type="radio" name="q10" value="w"> False
+
+                <p>11. SSDs have no moving parts. (1 Mark)</p>
+                <input type="radio" name="q11" value="correct"> True <input type="radio" name="q11" value="w"> False
+
+                <p>12. SSDs use what type of technology to store data? (1 Mark)</p>
+                <input type="radio" name="q12" value="correct"> NAND Flash Gates <input type="radio" name="q12" value="w"> Magnetic Polarisation
+
+                <p>13. Why are SSDs preferred for laptops? (1 Mark)</p>
+                <input type="radio" name="q13" value="correct"> Durable and low power <input type="radio" name="q13" value="w"> They are cheaper
+
+                <p>14. SSDs have a limited number of write cycles. (1 Mark)</p>
+                <input type="radio" name="q14" value="correct"> True <input type="radio" name="q14" value="w"> False
+
+                <p>15. USB Flash drives are a form of Solid State storage. (1 Mark)</p>
+                <input type="radio" name="q15" value="correct"> True <input type="radio" name="q15" value="w"> False
+
+                <p>16. Which optical disc has the largest capacity? (1 Mark)</p>
+                <input type="radio" name="q16" value="correct"> Blu-ray <input type="radio" name="q16" value="w"> DVD
+
+                <p>17. Optical media uses what to read data? (1 Mark)</p>
+                <input type="radio" name="q17" value="correct"> Red or Blue Lasers <input type="radio" name="q17" value="w"> Electromagnets
+
+                <p>18. A "Pit" represents binary 0 or 1 on an optical disk. (1 Mark)</p>
+                <input type="radio" name="q18" value="correct"> True <input type="radio" name="q18" value="w"> False
+
+                <p>19. Which disk is commonly used for high-definition movies? (1 Mark)</p>
+                <input type="radio" name="q19" value="correct"> Blu-ray <input type="radio" name="q19" value="w"> CD-ROM
+
+                <p>20. CD-R is "Re-writable." (1 Mark)</p>
+                <input type="radio" name="q20" value="w"> True <input type="radio" name="q20" value="correct"> False (Recordable once)
+
+                <p>21. How many Megabytes (MB) are in 1 Gigabyte (GB) for IGCSE? (1 Mark)</p>
+                <input type="radio" name="q21" value="correct"> 1000 <input type="radio" name="q21" value="w"> 1024 (Standard)
+
+                <p>22. Which storage is best for a web server requiring instant data access? (1 Mark)</p>
+                <input type="radio" name="q22" value="correct"> SSD <input type="radio" name="q22" value="w"> Magnetic Tape
+
+                <p>23. Cloud storage is essentially remote storage on a server. (1 Mark)</p>
+                <input type="radio" name="q23" value="correct"> True <input type="radio" name="q23" value="w"> False
+
+                <p>24. Dynamic RAM (DRAM) needs to be constantly refreshed. (1 Mark)</p>
+                <input type="radio" name="q24" value="correct"> True <input type="radio" name="q24" value="w"> False
+
+                <p>25. Static RAM (SRAM) is typically used for what? (1 Mark)</p>
+                <input type="radio" name="q25" value="correct"> CPU Cache <input type="radio" name="q25" value="w"> Main System Memory
+
+                <br><br>
+                <button type="button" class="btn-gamify" onclick="calculateScore('3-3')">Check My Performance</button>
+            </form>
+            <div id="result-3-3" style="margin-top: 20px;"></div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

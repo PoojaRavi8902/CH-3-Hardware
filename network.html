@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.4 Network Hardware | IGCSE CS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">0984 HARDWARE QUEST</div>
+        <div>
+            <a href="index.html" style="color: white; margin-left: 20px;">Home</a>
+            <a href="storage.html" style="color: white; margin-left: 20px;">Storage</a>
+            <a href="game.html" style="color: white; margin-left: 20px; font-weight: bold; color: var(--accent-yellow);">GAME ZONE</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header style="padding: 2rem 0;">
+            <h1>3.4 Network Hardware</h1>
+            <p style="color: var(--accent-blue);">Devices and media that connect the world.</p>
+        </header>
+
+        <section class="card">
+            <h2>3.4.1 The Hardware of Connectivity</h2>
+            <p>To connect to a network (LAN or WAN), specific hardware is required to manage data packets and physical connections.</p>
+            <ul>
+                <li><strong>NIC (Network Interface Card):</strong> An internal hardware component that allows a device to connect to a network. It contains the hard-coded <strong>MAC Address</strong>.</li>
+                <li><strong>Router:</strong> Forwards data packets between different networks by reading the <strong>IP Address</strong>. It creates a "routing table" to find the quickest path for data.</li>
+                <li><strong>Switch:</strong> Connects devices within a LAN. Unlike a Hub, it checks the destination MAC address and sends data <em>only</em> to the specific intended recipient.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>3.4.2 MAC vs IP Addresses</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+                    <h3 style="color: var(--accent-blue);">MAC Address</h3>
+                    <p><strong>Physical Address:</strong> Unique ID assigned by the manufacturer. Written in Hexadecimal (e.g., 00:1A:2B:3C:4D:5E). It never changes.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-purple);">
+                    <h3 style="color: var(--accent-purple);">IP Address</h3>
+                    <p><strong>Logical Address:</strong> Assigned by the network router. Identifies a device's location on the internet. Can be <strong>IPv4</strong> (32-bit) or <strong>IPv6</strong> (128-bit).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>3.4.3 Transmission Media</h2>
+            <table style="width: 100%; border-collapse: collapse; margin-top:10px;">
+                <tr style="background: rgba(0,0,0,0.3);">
+                    <th style="padding: 10px; border: 1px solid #444;">Medium</th>
+                    <th style="padding: 10px; border: 1px solid #444;">Method</th>
+                    <th style="padding: 10px; border: 1px solid #444;">Pros/Cons</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #444;"><strong>Copper (Ethernet)</strong></td>
+                    <td style="padding: 10px; border: 1px solid #444;">Electrical pulses</td>
+                    <td style="padding: 10px; border: 1px solid #444;">✅ Cheap. ❌ Signal degrades over distance.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #444;"><strong>Fibre Optic</strong></td>
+                    <td style="padding: 10px; border: 1px solid #444;">Pulses of light</td>
+                    <td style="padding: 10px; border: 1px solid #444;">✅ Massive bandwidth, no interference. ❌ Expensive.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #444;"><strong>Wi-Fi</strong></td>
+                    <td style="padding: 10px; border: 1px solid #444;">Radio waves</td>
+                    <td style="padding: 10px; border: 1px solid #444;">✅ High mobility. ❌ Security risks, lower speed.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="quiz-section">
+            <h2>Unit 3.4 Mastery Test (25 Marks)</h2>
+            <form id="quiz-3-4">
+                
+                <p>1. What does NIC stand for? (1 Mark)</p>
+                <input type="radio" name="q1" value="correct"> Network Interface Card <input type="radio" name="q1" value="w"> Network Internet Connection
+
+                <p>2. A MAC address is assigned to the NIC by the manufacturer. (1 Mark)</p>
+                <input type="radio" name="q2" value="correct"> True <input type="radio" name="q2" value="w"> False
+
+                <p>3. How many bits are typically in a MAC address? (1 Mark)</p>
+                <input type="radio" name="q3" value="correct"> 48 bits <input type="radio" name="q3" value="w"> 32 bits
+
+                <p>4. An IP address is static and never changes for a device. (1 Mark)</p>
+                <input type="radio" name="q4" value="w"> True <input type="radio" name="q4" value="correct"> False
+
+                <p>5. Which address is used to identify a device on a local network? (1 Mark)</p>
+                <input type="radio" name="q5" value="correct"> MAC Address <input type="radio" name="q5" value="w"> URL
+
+                <p>6. Which device sends data to ALL connected ports, causing high traffic? (1 Mark)</p>
+                <input type="radio" name="q6" value="correct"> Hub <input type="radio" name="q6" value="w"> Switch
+
+                <p>7. A Switch is "smarter" than a Hub because it uses MAC addresses to route data. (1 Mark)</p>
+                <input type="radio" name="q7" value="correct"> True <input type="radio" name="q7" value="w"> False
+
+                <p>8. Which device is best for reducing data collisions in a LAN? (1 Mark)</p>
+                <input type="radio" name="q8" value="correct"> Switch <input type="radio" name="q8" value="w"> Hub
+
+                <p>9. A Bridge is used to connect two different parts of the same LAN. (1 Mark)</p>
+                <input type="radio" name="q9" value="correct"> True <input type="radio" name="q9" value="w"> False
+
+                <p>10. Most modern homes use a device that combines a Switch, Router, and WAP. (1 Mark)</p>
+                <input type="radio" name="q10" value="correct"> True <input type="radio" name="q10" value="w"> False
+
+                <p>11. Which device is used to connect a LAN to the Internet? (1 Mark)</p>
+                <input type="radio" name="q11" value="correct"> Router <input type="radio" name="q11" value="w"> NIC
+
+                <p>12. Routers read the 'Destination IP' of a data packet. (1 Mark)</p>
+                <input type="radio" name="q12" value="correct"> True <input type="radio" name="q12" value="w"> False
+
+                <p>13. What does WAP stand for? (1 Mark)</p>
+                <input type="radio" name="q13" value="correct"> Wireless Access Point <input type="radio" name="q13" value="w"> Web Application Protocol
+
+                <p>14. A Router can assign private IP addresses to local devices. (1 Mark)</p>
+                <input type="radio" name="q14" value="correct"> True <input type="radio" name="q14" value="w"> False
+
+                <p>15. Which device converts digital signals to analogue for phone lines? (1 Mark)</p>
+                <input type="radio" name="q15" value="correct"> Modem <input type="radio" name="q15" value="w"> Bridge
+
+                <p>16. Which cable uses pulses of light to transmit data? (1 Mark)</p>
+                <input type="radio" name="q16" value="correct"> Fibre Optic <input type="radio" name="q16" value="w"> Coaxial
+
+                <p>17. Fibre optic cables have higher bandwidth than copper cables. (1 Mark)</p>
+                <input type="radio" name="q17" value="correct"> True <input type="radio" name="q17" value="w"> False
+
+                <p>18. Twisted Pair cables (Ethernet) use which material? (1 Mark)</p>
+                <input type="radio" name="q18" value="correct"> Copper <input type="radio" name="q18" value="w"> Glass
+
+                <p>19. Which connection is most susceptible to electromagnetic interference? (1 Mark)</p>
+                <input type="radio" name="q19" value="correct"> Copper Cable <input type="radio" name="q19" value="w"> Fibre Optic
+
+                <p>20. Bluetooth is a form of Radio Frequency (RF) communication. (1 Mark)</p>
+                <input type="radio" name="q20" value="correct"> True <input type="radio" name="q20" value="w"> False
+
+                <p>21. What is the main advantage of Wi-Fi over wired connections? (1 Mark)</p>
+                <input type="radio" name="q21" value="correct"> Mobility <input type="radio" name="q21" value="w"> Security
+
+                <p>22. An Ethernet cable is also known as a Cat5 or Cat6 cable. (1 Mark)</p>
+                <input type="radio" name="q22" value="correct"> True <input type="radio" name="q22" value="w"> False
+
+                <p>23. Which device is used to expand the range of a wireless signal? (1 Mark)</p>
+                <input type="radio" name="q23" value="correct"> Range Extender/Repeater <input type="radio" name="q23" value="w"> NIC
+
+                <p>24. Directing data based on a routing table is the job of a... (1 Mark)</p>
+                <input type="radio" name="q24" value="correct"> Router <input type="radio" name="q24" value="w"> Hub
+
+                <p>25. MAC addresses are written in Hexadecimal. (1 Mark)</p>
+                <input type="radio" name="q25" value="correct"> True <input type="radio" name="q25" value="w"> False
+
+                <br><br>
+                <button type="button" class="btn-gamify" onclick="calculateScore('3-4')">Check My Performance</button>
+            </form>
+            <div id="result-3-4" style="margin-top: 20px;"></div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

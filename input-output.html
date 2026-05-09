@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.2 Input & Output Devices | IGCSE CS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">0984 HARDWARE QUEST</div>
+        <div>
+            <a href="index.html" style="color: white; margin-left: 20px;">Home</a>
+            <a href="architecture.html" style="color: white; margin-left: 20px;">Architecture</a>
+            <a href="storage.html" style="color: white; margin-left: 20px;">Next: Storage</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header style="padding: 2rem 0;">
+            <h1>3.2 Input and Output Devices</h1>
+            <p style="color: var(--accent-blue);">Comprehensive study of hardware interfaces and the Physical-Digital bridge.</p>
+        </header>
+
+        <section class="card">
+            <h2>3.2.1 Scanning Technologies</h2>
+            <p>Devices like <strong>2D Scanners</strong> use a bright light and a <strong>Charge-Coupled Device (CCD)</strong> to convert reflected light into electrical signals. <strong>3D Scanners</strong> use lasers or X-rays to measure the X, Y, and Z coordinates of an object to build a digital CAD model.</p>
+            
+            <h3 style="margin-top:15px;">Barcodes vs QR Codes</h3>
+            <ul>
+                <li><strong>Barcodes:</strong> 1D linear codes read by laser/LED. Primarily used for stock identification in retail.</li>
+                <li><strong>QR Codes:</strong> 2D matrix codes read by a camera. Can store much more data (URLs, contact info).</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>3.2.2 Sensors and Control Systems</h2>
+            <p>In automated systems, <strong>sensors</strong> measure physical properties (analogue). For a computer to understand this, an <strong>ADC (Analogue to Digital Converter)</strong> is required.</p>
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-left: 4px solid var(--accent-blue);">
+                <strong>The Process:</strong>
+                <ol>
+                    <li>Sensor sends analogue signal to ADC.</li>
+                    <li>ADC sends digital data to the Microprocessor.</li>
+                    <li>Microprocessor compares data to a <strong>Pre-set Value</strong>.</li>
+                    <li>If action is needed, a signal is sent to an <strong>Actuator</strong> (e.g., motor, heater).</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>3.2.3 Output Technologies</h2>
+            <p><strong>Inkjet Printers</strong> use liquid ink droplets (Thermal Bubble or Piezoelectric), while <strong>Laser Printers</strong> use dry powder (Toner) and static electricity to bond images to paper using a fuser.</p>
+            
+            <h3 style="margin-top:20px;">Touchscreen Technologies</h3>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>How it Works</th>
+                    <th>Pros/Cons</th>
+                </tr>
+                <tr>
+                    <td><strong>Capacitive</strong></td>
+                    <td>Detects change in electric field from a finger.</td>
+                    <td>✅ Durable, supports multi-touch. ❌ No gloves.</td>
+                </tr>
+                <tr>
+                    <td><strong>Resistive</strong></td>
+                    <td>Physical layers press together to complete a circuit.</td>
+                    <td>✅ Cheap, works with stylus/gloves. ❌ Easily damaged.</td>
+                </tr>
+            </table>
+
+            <h3 style="margin-top:20px;">LCD & LED Displays</h3>
+            <p>Most modern screens are <strong>LCD</strong>. They require a backlight. <strong>LED-backlit</strong> screens use LEDs which reach maximum brightness instantly and consume less power. <strong>OLED</strong> screens are self-lit and don't need a backlight at all.</p>
+        </section>
+
+        <section class="quiz-section">
+            <h2>Unit 3.2 Mastery Test (25 Marks)</h2>
+            <form id="quiz-3-2">
+                
+                <p>1. Which device uses a CCD to convert reflected light into digital signals? (1 Mark)</p>
+                <input type="radio" name="q1" value="correct"> 2D Scanner <input type="radio" name="q1" value="w"> Inkjet Printer
+
+                <p>2. Which code type uses a camera (imager) to process a 2D matrix of pixels? (1 Mark)</p>
+                <input type="radio" name="q2" value="correct"> QR Code <input type="radio" name="q2" value="w"> Standard Barcode
+
+                <p>3. What does a 3D scanner measure to create a digital model? (1 Mark)</p>
+                <input type="radio" name="q3" value="correct"> X, Y, Z Coordinates <input type="radio" name="q3" value="w"> Colour Hex Codes
+
+                <p>4. Which sensor would be used to detect an intruder moving in a dark room? (1 Mark)</p>
+                <input type="radio" name="q4" value="correct"> Passive Infrared (PIR) <input type="radio" name="q4" value="w"> pH Sensor
+
+                <p>5. What component is required to convert a sensor's signal for a microprocessor? (1 Mark)</p>
+                <input type="radio" name="q5" value="correct"> ADC <input type="radio" name="q5" value="w"> DAC
+
+                <p>6. In a control system, the microprocessor compares sensor data to a... (1 Mark)</p>
+                <input type="radio" name="q6" value="correct"> Pre-set value <input type="radio" name="q6" value="w"> Actuator
+
+                <p>7. Which device is an example of an actuator? (1 Mark)</p>
+                <input type="radio" name="q7" value="correct"> Electric Motor <input type="radio" name="q7" value="w"> Acoustic Sensor
+
+                <p>8. Which sensor is used in a smart greenhouse to maintain acidity in soil? (1 Mark)</p>
+                <input type="radio" name="q8" value="correct"> pH Sensor <input type="radio" name="q8" value="w"> Humidity Sensor
+
+                <p>9. A barcode reader uses a red LED or laser to measure... (1 Mark)</p>
+                <input type="radio" name="q9" value="correct"> Reflection of light <input type="radio" name="q9" value="w"> Heat of the sticker
+
+                <p>10. Which device is used to input hard-copy text into a computer to be edited? (1 Mark)</p>
+                <input type="radio" name="q10" value="correct"> Optical Character Recognition (OCR) <input type="radio" name="q10" value="w"> OMR
+
+                <p>11. Which printer uses a rotating drum and static electricity? (1 Mark)</p>
+                <input type="radio" name="q11" value="correct"> Laser Printer <input type="radio" name="q11" value="w"> Inkjet Printer
+
+                <p>12. What is the name of the 'dry powder' used in laser printers? (1 Mark)</p>
+                <input type="radio" name="q12" value="correct"> Toner <input type="radio" name="q12" value="w"> Resin
+
+                <p>13. Which printing technology is best for high-quality photographic prints? (1 Mark)</p>
+                <input type="radio" name="q13" value="correct"> Inkjet <input type="radio" name="q13" value="w"> Laser
+
+                <p>14. A 3D printer creates objects using what process? (1 Mark)</p>
+                <input type="radio" name="q14" value="correct"> Additive manufacturing <input type="radio" name="q14" value="w"> Subtractive manufacturing
+
+                <p>15. Which component in a laser printer melts the toner onto the paper? (1 Mark)</p>
+                <input type="radio" name="q15" value="correct"> Fuser Unit <input type="radio" name="q15" value="w"> Discharge Lamp
+
+                <p>16. Which projector technology uses millions of tiny tilting micro-mirrors? (1 Mark)</p>
+                <input type="radio" name="q16" value="correct"> DLP <input type="radio" name="q16" value="w"> LCD
+
+                <p>17. LCD projectors use three separate panels of which colours? (1 Mark)</p>
+                <input type="radio" name="q17" value="correct"> Red, Green, Blue <input type="radio" name="q17" value="w"> Cyan, Magenta, Yellow
+
+                <p>18. Which display type is self-lit and does not require a backlight? (1 Mark)</p>
+                <input type="radio" name="q18" value="correct"> OLED <input type="radio" name="q18" value="w"> LCD
+
+                <p>19. What is the primary advantage of LED-backlit screens over CCFL? (1 Mark)</p>
+                <input type="radio" name="q19" value="correct"> More energy efficient <input type="radio" name="q19" value="w"> Lower resolution
+
+                <p>20. Capacitive touchscreens work by detecting... (1 Mark)</p>
+                <input type="radio" name="q20" value="correct"> Change in electric current <input type="radio" name="q20" value="w"> Physical pressure
+
+                <p>21. Which touch technology supports multi-touch (e.g. pinching)? (1 Mark)</p>
+                <input type="radio" name="q21" value="correct"> Capacitive <input type="radio" name="q21" value="w"> Resistive
+
+                <p>22. Which sensor is used to count cars passing over a road? (1 Mark)</p>
+                <input type="radio" name="q22" value="correct"> Magnetic Field/Induction <input type="radio" name="q22" value="w"> Gas Sensor
+
+                <p>23. How does a microprocessor know when to turn off a heater? (1 Mark)</p>
+                <input type="radio" name="q23" value="correct"> Comparison with pre-set value <input type="radio" name="q23" value="w"> It turns off automatically
+
+                <p>24. What type of printer would be used to create a prosthetic limb? (1 Mark)</p>
+                <input type="radio" name="q24" value="correct"> 3D Printer <input type="radio" name="q24" value="w"> Dot Matrix
+
+                <p>25. Which device uses a DAC (Digital to Analogue Converter) internally? (1 Mark)</p>
+                <input type="radio" name="q25" value="correct"> Speaker <input type="radio" name="q25" value="w"> Keyboard
+
+                <br><br>
+                <button type="button" class="btn-gamify" onclick="calculateScore('3-2')">Check My Performance</button>
+            </form>
+            <div id="result-3-2" style="margin-top: 20px;"></div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

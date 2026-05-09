@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Game Zone | IGCSE Mastery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-container {
+            text-align: center;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 20px;
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+        #gameCanvas {
+            background: #0f172a;
+            border: 1px solid var(--accent-blue);
+            cursor: crosshair;
+            max-width: 100%;
+        }
+        .timer-bar {
+            width: 100%;
+            height: 10px;
+            background: #334155;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        #timerFill {
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: width 1s linear;
+        }
+        .controls { margin-top: 20px; }
+    </style>
+</head>
+<body onload="initGame()">
+
+    <nav>
+        <div class="logo">0984 GAME ZONE</div>
+        <div id="countdownDisplay" style="color: var(--gold); font-weight: bold;">Time Remaining: 10:00</div>
+    </nav>
+
+    <main class="container">
+        <div class="game-container">
+            <h2>Hardware Component Match-Up</h2>
+            <p>Drag the component names on the left into the correct functional boxes on the right!</p>
+            
+            <div class="timer-bar"><div id="timerFill"></div></div>
+            
+            <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+            <div class="controls">
+                <button class="btn-gamify" onclick="resetGame()">Reset Level</button>
+                <p id="gameStatus"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        let items = [
+            { id: 1, text: 'ALU', x: 50, y: 50, targetY: 50, desc: 'Performs Logic & Math', matched: false },
+            { id: 2, text: 'PC', x: 50, y: 130, targetY: 130, desc: 'Next Instruction Address', matched: false },
+            { id: 3, text: 'MAR', x: 50, y: 210, targetY: 210, desc: 'Memory Address Store', matched: false },
+            { id: 4, text: 'ACC', x: 50, y: 290, targetY: 290, desc: 'Stores Calc Results', matched: false },
+            { id: 5, text: 'CU', x: 50, y: 370, targetY: 370, desc: 'Manages Data Flow', matched: false }
+        ];
+
+        let targets = items.map(item => ({ ...item, x: 500 }));
+        // Shuffle labels
+        let labels = items.map(item => ({ ...item }));
+        labels.sort(() => Math.random() - 0.5);
+        labels.forEach((l, i) => l.y = 50 + (i * 80));
+
+        let selected = null;
+        let offset = { x: 0, y: 0 };
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw Targets
+            targets.forEach(t => {
+                ctx.strokeStyle = varColor('--accent-blue');
+                ctx.setLineDash([5, 5]);
+                ctx.strokeRect(t.x, t.y, 250, 60);
+                ctx.setLineDash([]);
+                ctx.fillStyle = varColor('--text-dim');
+                ctx.font = "14px Inter";
+                ctx.fillText(t.desc, t.x + 10, t.y + 35);
+            });
+
+            // Draw Labels
+            labels.forEach(l => {
+                if (l.matched) return;
+                ctx.fillStyle = varColor('--accent-purple');
+                ctx.fillRect(l.x, l.y, 120, 60);
+                ctx.fillStyle = "white";
+                ctx.font = "bold 18px Inter";
+                ctx.fillText(l.text, l.x + 40, l.y + 35);
+            });
+
+            requestAnimationFrame(draw);
+        }
+
+        function varColor(name) {
+            return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+        }
+
+        canvas.onmousedown = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            labels.forEach(l => {
+                if (!l.matched && mouseX > l.x && mouseX < l.x + 120 && mouseY > l.y && mouseY < l.y + 60) {
+                    selected = l;
+                    offset.x = mouseX - l.x;
+                    offset.y = mouseY - l.y;
+                }
+            });
+        };
+
+        window.onmousemove = (e) => {
+            if (selected) {
+                const rect = canvas.getBoundingClientRect();
+                selected.x = e.clientX - rect.left - offset.x;
+                selected.y = e.clientY - rect.top - offset.y;
+            }
+        };
+
+        window.onmouseup = () => {
+            if (selected) {
+                // Check if dropped on correct target
+                const target = targets.find(t => t.id === selected.id);
+                if (Math.abs(selected.x - target.x) < 50 && Math.abs(selected.y - target.y) < 30) {
+                    selected.matched = true;
+                    checkWin();
+                } else {
+                    // Snap back
+                    const idx = labels.indexOf(selected);
+                    selected.x = 50;
+                    selected.y = 50 + (idx * 80);
+                }
+                selected = null;
+            }
+        };
+
+        function checkWin() {
+            if (labels.every(l => l.matched)) {
+                document.getElementById('gameStatus').innerText = "CONGRATULATIONS! Level Complete.";
+                document.getElementById('gameStatus').style.color = varColor('--success');
+            }
+        }
+
+        function resetGame() { location.reload(); }
+
+        function initGame() {
+            draw();
+            // Start the 10 min countdown display
+            const startTime = parseInt(localStorage.getItem('gameStartTime'));
+            setInterval(() => {
+                const now = new Date().getTime();
+                const diff = (10 * 60 * 1000) - (now - startTime);
+                if (diff <= 0) return;
+                const mins = Math.floor(diff / 60000);
+                const secs = Math.floor((diff % 60000) / 1000);
+                document.getElementById('countdownDisplay').innerText = `Time Remaining: ${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
